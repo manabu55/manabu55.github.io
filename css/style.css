@@ -660,3 +660,78 @@ footer {
         padding-left: 20px;
     }
 }
+
+/* 法的文書のインデントスタイル */
+.legal-content section {
+    margin-bottom: 40px;
+}
+
+.legal-content section section {
+    margin-left: 24px;
+    margin-bottom: 24px;
+}
+
+.legal-content ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.legal-content ol>li {
+    counter-increment: item;
+    margin-bottom: 16px;
+    padding-left: 32px;
+    position: relative;
+}
+
+.legal-content ol>li:before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.legal-content ol>li>ul {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.legal-content ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.legal-content ul>li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+.legal-content ul>li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.legal-content ol ol {
+    margin-left: 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.legal-content ol ul {
+    margin-left: 0;
+}
+
+/* セクション間の区切り */
+.legal-content>section {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.legal-content>section:last-child {
+    border-bottom: none;
+}
