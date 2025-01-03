@@ -185,11 +185,30 @@ footer {
     transform: translateY(-5px);
 }
 
+.download {
+    padding: 80px 0;
+}
+
 .download-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
     margin-top: 30px;
+}
+
+.store-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.store-link:hover {
+    transform: translateY(-2px);
+}
+
+.store-badge {
+    display: block;
+    height: auto;
+    max-width: 100%;
 }
 
 .app-store-button,
@@ -387,11 +406,13 @@ footer {
     }
 
     .hero-image {
-        order: 0; /* デフォルトの順序に戻す */
+        order: 0;
+        /* デフォルトの順序に戻す */
     }
-    
+
     .hero-text {
-        order: -1; /* テキストを先に表示 */
+        order: -1;
+        /* テキストを先に表示 */
         text-align: center;
     }
 
@@ -412,19 +433,17 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .hero-content {
+    .download {
         padding: 40px 0;
     }
 
-    .gradient-text {
-        font-size: 36px;
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .hero-subtitle {
-        font-size: 20px;
-    }
-
-    .hero-description {
-        font-size: 16px;
+    .store-badge {
+        width: 140px;
+        /* モバイルでは少し小さく */
     }
 }
