@@ -48,51 +48,138 @@
 
     <main>
         <section class="hero">
-            <div class="container">
-                <h1>Daily 1-3-5</h1>
-                <p>シンプルで効果的なタスク管理アプリ</p>
-                <img src="images/icons/app-icon.png" alt="Daily 1-3-5 アプリアイコン" width="120" height="120">
+            <div class="hero-background"></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="gradient-text">Daily 1-3-5</h1>
+                    <p class="hero-subtitle">タスク管理を、もっとシンプルに。</p>
+                    <p class="hero-description">1つの重要タスク、3つの中タスク、5つの小タスクで<br>毎日の生産性を最大化</p>
+                    <div class="hero-cta">
+                        <a href="#download" class="cta-button">今すぐ始める</a>
+                        <a href="#features" class="secondary-button">機能を見る</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <img src="images/app-screenshot.png" alt="アプリのスクリーンショット" class="app-preview">
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- index.htmlのfeaturesセクション完全版 -->
         <section id="features" class="features">
             <div class="container">
-                <h2>主な機能</h2>
+                <h2 class="section-title">主な機能</h2>
+                <p class="section-subtitle">シンプルだからこそ、効果的。</p>
                 <div class="features-grid">
                     <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                            </svg>
+                        </div>
                         <h3>1-3-5ルール対応</h3>
-                        <p>1つの大きなタスク、3つの中程度のタスク、5つの小さなタスクで1日を効率的に管理</p>
+                        <p>優先順位付けが簡単。重要なタスクに集中できます。</p>
+                        <div class="feature-detail">
+                            <ul>
+                                <li>1つの重要タスク</li>
+                                <li>3つの中程度タスク</li>
+                                <li>5つの小タスク</li>
+                            </ul>
+                        </div>
                     </div>
+
                     <div class="feature-card">
-                        <h3>シンプルな操作性</h3>
-                        <p>直感的なUIで簡単にタスクを追加・管理可能</p>
-                    </div>
-                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
                         <h3>カレンダー連携</h3>
-                        <p>タスクをカレンダーで管理し、効率的なスケジュール管理を実現</p>
+                        <p>タスクをカレンダーで視覚的に管理。進捗が一目で分かります。</p>
+                        <div class="feature-detail">
+                            <ul>
+                                <li>月間カレンダー表示</li>
+                                <li>日付ごとのタスク管理</li>
+                                <li>進捗状況の可視化</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                        <h3>シンプル操作</h3>
+                        <p>直感的なUIで、誰でも簡単にタスク管理を始められます。</p>
+                        <div class="feature-detail">
+                            <ul>
+                                <li>ドラッグ＆ドロップ対応</li>
+                                <li>スワイプでタスク完了</li>
+                                <li>簡単なタスク編集</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3>安全なデータ管理</h3>
+                        <p>タスクデータを安全に保護し、いつでも安心してアクセス。</p>
+                        <div class="feature-detail">
+                            <ul>
+                                <li>自動バックアップ</li>
+                                <li>データの暗号化</li>
+                                <li>簡単リストア機能</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                        </div>
+                        <h3>カスタマイズ機能</h3>
+                        <p>好みに合わせて、使いやすくカスタマイズできます。</p>
+                        <div class="feature-detail">
+                            <ul>
+                                <li>ダーク/ライトモード</li>
+                                <li>カラーテーマ設定</li>
+                                <li>表示項目のカスタマイズ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3>生産性向上</h3>
+                        <p>タスクの優先順位付けで、効率的な時間管理を実現。</p>
+                        <div class="feature-detail">
+                            <ul>
+                                <li>タスク分析機能</li>
+                                <li>進捗レポート</li>
+                                <li>達成率の可視化</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- index.htmlのfeaturesセクションに追加 -->
-            <section class="benefits">
-                <div class="container">
-                    <h2>1-3-5ルールで生産性向上</h2>
-                    <div class="benefits-grid">
-                        <div class="benefit-card">
-                            <h3>優先順位の明確化</h3>
-                            <p>1つの重要タスク、3つの中程度タスク、5つの小タスクで1日のプライオリティを整理</p>
-                        </div>
-                        <div class="benefit-card">
-                            <h3>進捗の可視化</h3>
-                            <p>タスクの完了状況をカレンダーで一目で確認、モチベーション維持をサポート</p>
-                        </div>
-                        <div class="benefit-card">
-                            <h3>セキュアなデータ管理</h3>
-                            <p>ローカル保存とバックアップ機能で大切なタスクデータを安全に管理</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </section>
 
         <section id="download" class="download">
