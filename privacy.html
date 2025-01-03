@@ -2,36 +2,38 @@
 <html lang="ja">
 
 <head>
-    <!-- 既存のメタタグ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily 1-3-5 - シンプルで効果的なタスク管理アプリ</title>
+    <title>プライバシーポリシー - Daily 1-3-5</title>
+    <meta name="description" content="Daily 1-3-5アプリのプライバシーポリシーです。個人情報の取り扱い、データの保護、広告表示について説明しています。">
 
-    <!-- アプリアイコンの設定 -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="images/icons/app-icon.png">
     <link rel="apple-touch-icon" href="images/icons/app-icon.png">
     <link rel="icon" type="image/png" sizes="384x384" href="images/icons/app-icon@2x.png">
 
-    <!-- テーマカラー -->
     <meta name="theme-color" content="#E8F5E9">
-
-    <!-- iOS用設定 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Daily 1-3-5">
 
-    <!-- 既存のスタイルシート -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <header role="banner">
         <div class="container header-content">
-            <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">Daily 1-3-5</a></div>
-            <nav>
-                <ul>
+            <div class="logo" role="heading" aria-level="1">
+                <a href="index.html">Daily 1-3-5</a>
+            </div>
+            <nav role="navigation" aria-label="メインナビゲーション">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                    <span class="menu-icon"></span>
+                </button>
+                <ul id="main-menu">
                     <li><a href="index.html">ホーム</a></li>
                     <li><a href="terms.html">利用規約</a></li>
                 </ul>
@@ -39,53 +41,183 @@
         </div>
     </header>
 
-    <main>
-        <div class="legal-content">
+    <main id="main-content" role="main" class="legal-content container">
+        <article>
             <h1>プライバシーポリシー</h1>
 
-            <h2>1. はじめに</h2>
-            <p>本プライバシーポリシーは、1-3-5ルールタスク管理アプリ（以下「本アプリ」）における、ユーザーの個人情報の取り扱いについて定めるものです。</p>
+            <section aria-labelledby="introduction">
+                <h2 id="introduction">1. はじめに</h2>
+                <p>本プライバシーポリシーは、1-3-5ルールタスク管理アプリ（以下「本アプリ」）における、ユーザーの個人情報の取り扱いについて定めるものです。</p>
+            </section>
 
-            <h2>2. 収集する情報</h2>
-            <h3>2.1. タスク関連情報</h3>
-            <ul>
-                <li>タスク名</li>
-                <li>タスクの説明</li>
-                <li>タスクの期限</li>
-                <li>タスクのカテゴリー</li>
-                <li>タスクに添付された画像</li>
-            </ul>
+            <section aria-labelledby="collected-info">
+                <h2 id="collected-info">2. 収集する情報</h2>
 
-            <h3>2.2. デバイス情報</h3>
-            <ul>
-                <li>デバイスの種類</li>
-                <li>OSのバージョン</li>
-                <li>アプリのバージョン</li>
-                <li>広告ID（広告表示のため）</li>
-            </ul>
+                <section aria-labelledby="task-info">
+                    <h3 id="task-info">2.1. タスク関連情報</h3>
+                    <ul>
+                        <li>タスク名</li>
+                        <li>タスクの説明</li>
+                        <li>タスクの期限</li>
+                        <li>タスクのカテゴリー</li>
+                        <li>タスクに添付された画像</li>
+                    </ul>
+                </section>
 
-            <!-- 以下、プライバシーポリシーの内容を続けて記載 -->
+                <section aria-labelledby="device-info">
+                    <h3 id="device-info">2.2. デバイス情報</h3>
+                    <ul>
+                        <li>デバイスの種類</li>
+                        <li>OSのバージョン</li>
+                        <li>アプリのバージョン</li>
+                        <li>広告ID（広告表示のため）</li>
+                    </ul>
+                </section>
 
-            <h2>8. お問い合わせ</h2>
-            <p>本プライバシーポリシーに関するお問い合わせは、以下のメールアドレスまでお願いいたします：</p>
-            <p>メールアドレス：privacy@manabu.co.jp</p>
-            <p>運営会社：まなぶ合同会社</p>
+                <section aria-labelledby="backup-info">
+                    <h3 id="backup-info">2.3. バックアップデータ</h3>
+                    <ul>
+                        <li>ローカルに保存されたタスクデータ</li>
+                        <li>アプリの設定情報</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section aria-labelledby="data-usage">
+                <h2 id="data-usage">3. 情報の利用目的</h2>
+
+                <section aria-labelledby="service-provision">
+                    <h3 id="service-provision">3.1. サービス提供</h3>
+                    <ul>
+                        <li>タスク管理機能の提供</li>
+                        <li>アプリの動作の最適化</li>
+                        <li>バックアップとデータ復元機能の提供</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="ad-delivery">
+                    <h3 id="ad-delivery">3.2. 広告配信</h3>
+                    <ul>
+                        <li>ユーザーの興味・関心に基づいた広告の表示</li>
+                        <li>広告効果の測定と分析</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section aria-labelledby="data-protection">
+                <h2 id="data-protection">4. データの保護</h2>
+
+                <section aria-labelledby="security-measures">
+                    <h3 id="security-measures">4.1. セキュリティ対策</h3>
+                    <ul>
+                        <li>データの暗号化</li>
+                        <li>セキュアストレージの使用</li>
+                        <li>アクセス制御の実装</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="data-storage">
+                    <h3 id="data-storage">4.2. データの保存場所</h3>
+                    <ul>
+                        <li>タスクデータは主にデバイスのローカルストレージに保存</li>
+                        <li>バックアップデータは暗号化して保存</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section aria-labelledby="third-party">
+                <h2 id="third-party">5. 第三者への提供</h2>
+                <p>以下の場合を除き、収集した情報を第三者に提供することはありません：</p>
+                <ul>
+                    <li>ユーザーの同意がある場合</li>
+                    <li>法令に基づく場合</li>
+                    <li>広告配信のために必要な場合（Google AdMob）</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="advertising">
+                <h2 id="advertising">6. 広告について</h2>
+                <p>本アプリでは、Google AdMobを利用して広告を配信しています：</p>
+                <ul>
+                    <li>広告IDを使用して広告の最適化を行います</li>
+                    <li>広告に関する情報はGoogle社のプライバシーポリシーに従って取り扱われます</li>
+                    <li>ユーザーは端末の設定から広告IDのリセットや追跡制限を行うことができます</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="data-deletion">
+                <h2 id="data-deletion">7. データの削除</h2>
+                <p>ユーザーは以下の方法でデータを削除できます：</p>
+                <ul>
+                    <li>アプリ内の設定画面からデータを削除</li>
+                    <li>アプリのアンインストール</li>
+                    <li>バックアップデータの削除</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="contact">
+                <h2 id="contact">8. お問い合わせ</h2>
+                <p>本プライバシーポリシーに関するお問い合わせは、以下のメールアドレスまでお願いいたします：</p>
+                <p>メールアドレス：<a href="mailto:privacy@manabu.co.jp">privacy@manabu.co.jp</a></p>
+                <p>※お問い合わせいただいた内容には、原則として3営業日以内に返信いたします。</p>
+                <p>運営会社：まなぶ合同会社</p>
+            </section>
+
+            <section aria-labelledby="updates">
+                <h2 id="updates">9. 改定</h2>
+                <p>本プライバシーポリシーの内容は、法令変更や機能追加等の理由により、予告なく変更される場合があります。変更があった場合、アプリ内での通知または当社ウェブサイトでお知らせいたします。</p>
+            </section>
 
             <p class="update-date">最終更新日：2025年1月2日</p>
-        </div>
+        </article>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-links">
+    <footer role="contentinfo">
+        <div class="container">
+            <nav class="footer-links" aria-label="フッターナビゲーション">
                 <a href="index.html">ホーム</a>
                 <a href="terms.html">利用規約</a>
-            </div>
-            <div class="copyright">
-                © 2025 まなぶ合同会社 All rights reserved.
-            </div>
+            </nav>
+            <p class="copyright">© 2025 まなぶ合同会社 All rights reserved.</p>
         </div>
     </footer>
+    <<!-- オフライン対応スクリプト -->
+        <script>
+            // Service Workerの登録
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(registration => {
+                            console.log('ServiceWorker registration successful');
+                        })
+                        .catch(err => {
+                            console.log('ServiceWorker registration failed: ', err);
+                        });
+                });
+            }
+
+            // オフライン検出
+            window.addEventListener('online', updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+
+            function updateOnlineStatus(event) {
+                const status = navigator.onLine ? 'オンライン' : 'オフライン';
+                const notification = document.createElement('div');
+                notification.className = `connection-status ${status.toLowerCase()}`;
+                notification.textContent = status;
+
+                // 既存の通知があれば削除
+                const existingNotification = document.querySelector('.connection-status');
+                if (existingNotification) {
+                    existingNotification.remove();
+                }
+
+                document.body.appendChild(notification);
+
+                // 3秒後に通知を消す
+                setTimeout(() => notification.remove(), 3000);
+            }
+        </script>
 </body>
 
 </html>

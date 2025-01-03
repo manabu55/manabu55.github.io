@@ -556,3 +556,69 @@ footer {
         color: LinkText;
     }
 }
+
+/* オフライン関連のスタイル */
+.connection-status {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.connection-status.offline {
+    background-color: #f44336;
+}
+
+.connection-status.online {
+    background-color: #4caf50;
+}
+
+.offline-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.offline-message {
+    max-width: 400px;
+}
+
+.offline-message h1 {
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.offline-message button {
+    margin-top: 24px;
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.offline-message button:hover {
+    background: var(--primary-dark);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
