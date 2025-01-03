@@ -447,3 +447,66 @@ footer {
         /* モバイルでは少し小さく */
     }
 }
+
+/* スキップリンクのスタイル */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* フォーカス表示の改善 */
+a:focus,
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* キーボードフォーカスのスタイル */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* モバイルメニューボタン */
+.menu-toggle {
+    display: none;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    #main-menu {
+        display: none;
+    }
+
+    #main-menu.active {
+        display: block;
+    }
+}
+
+/* ハイコントラストモード対応 */
+@media (forced-colors: active) {
+    .gradient-text {
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        background: none;
+        color: LinkText;
+    }
+}
