@@ -812,3 +812,43 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* フッターのリンク用スタイルを修正 */
+.footer-links {
+    display: flex;
+    gap: 24px;
+    /* リンク間の間隔 */
+    justify-content: center;
+    flex-wrap: nowrap;
+    /* 折り返しを防止 */
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+    /* テキストの折り返しを防止 */
+    transition: color 0.3s ease;
+    padding: 8px 16px;
+    /* タップ領域を確保 */
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* モバイル対応 */
+@media (max-width: 480px) {
+    .footer-links {
+        gap: 16px;
+        /* 小さい画面では間隔を縮める */
+    }
+
+    .footer-links a {
+        padding: 8px 12px;
+        /* パディングも調整 */
+        font-size: 14px;
+        /* 必要に応じてフォントサイズを小さく */
+    }
+}
