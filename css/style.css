@@ -755,3 +755,60 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* アプリ説明文用のスタイル */
+.app-tagline {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.feature-group {
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-group h3 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.feature-group ul {
+    margin-bottom: 16px;
+}
+
+.recommendation-list,
+.characteristics-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.recommendation-list li,
+.characteristics-list li {
+    background: var(--surface-color);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .app-tagline {
+        font-size: 20px;
+    }
+
+    .feature-group {
+        padding: 16px;
+    }
+
+    .recommendation-list,
+    .characteristics-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アプリ説明 - Daily 1-3-5</title>
+    <meta name="description" content="Daily 1-3-5は、1日のタスクを「1つの重要タスク、3つの中タスク、5つの小タスク」で管理する、シンプルで効果的なタスク管理アプリです。">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="images/icons/app-icon.png">
+    <link rel="apple-touch-icon" href="images/icons/app-icon.png">
+    <link rel="icon" type="image/png" sizes="384x384" href="images/icons/app-icon@2x.png">
+
+    <meta name="theme-color" content="#E8F5E9">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Daily 1-3-5">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <header role="banner">
+        <div class="container header-content">
+            <div class="logo" role="heading" aria-level="1">
+                <a href="index.html">Daily 1-3-5</a>
+            </div>
+            <nav role="navigation" aria-label="メインナビゲーション">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                    <span class="menu-icon"></span>
+                </button>
+                <ul id="main-menu">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                    <li><a href="terms.html">利用規約</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <div class="legal-content container">
+            <article>
+                <h1>Daily 1-3-5</h1>
+                <p class="app-tagline">シンプルで効果的なタスク管理アプリ</p>
+
+                <section aria-labelledby="overview">
+                    <h2 id="overview">アプリの概要</h2>
+                    <p>Daily 1-3-5は、1日のタスクを「1つの重要タスク、3つの中タスク、5つの小タスク」で管理する、シンプルで効果的なタスク管理アプリです。</p>
+                </section>
+
+                <section aria-labelledby="features">
+                    <h2 id="features">主な機能</h2>
+
+                    <div class="feature-group">
+                        <h3>✅ 1-3-5ルールによるタスク管理</h3>
+                        <ul>
+                            <li>1つの重要タスク</li>
+                            <li>3つの中程度のタスク</li>
+                            <li>5つの小さなタスク</li>
+                        </ul>
+                        <p>これにより、優先順位を明確にし、日々の生産性を最大化します。</p>
+                    </div>
+
+                    <div class="feature-group">
+                        <h3>✅ シンプルな操作性</h3>
+                        <ul>
+                            <li>直感的なユーザーインターフェース</li>
+                            <li>ドラッグ&ドロップでのタスク管理</li>
+                            <li>タスクの色分けとカテゴリー管理</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-group">
+                        <h3>✅ カレンダー連携</h3>
+                        <ul>
+                            <li>月間カレンダーでの進捗確認</li>
+                            <li>日付ごとのタスク管理</li>
+                            <li>スワイプで日付切り替え</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-group">
+                        <h3>✅ 便利な機能</h3>
+                        <ul>
+                            <li>ライト/ダークテーマ対応</li>
+                            <li>オフライン対応</li>
+                            <li>自動バックアップ</li>
+                            <li>データの暗号化</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section aria-labelledby="recommended">
+                    <h2 id="recommended">こんな方におすすめ</h2>
+                    <ul class="recommendation-list">
+                        <li>タスクの優先順位付けに悩んでいる方</li>
+                        <li>日々のタスクを効率的に管理したい方</li>
+                        <li>シンプルで使いやすいタスク管理アプリを探している方</li>
+                        <li>1日の目標を明確にしたい方</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="characteristics">
+                    <h2 id="characteristics">アプリの特徴</h2>
+                    <ul class="characteristics-list">
+                        <li>シンプルさを追求したデザイン</li>
+                        <li>安全なデータ管理</li>
+                        <li>快適な操作性</li>
+                        <li>バッテリー消費を抑えた軽快な動作</li>
+                    </ul>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <nav class="footer-links" aria-label="フッターナビゲーション">
+                <a href="index.html">ホーム</a>
+                <a href="privacy.html">プライバシーポリシー</a>
+                <a href="terms.html">利用規約</a>
+            </nav>
+            <p class="copyright">© 2025 まなぶ合同会社 All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- オフライン対応スクリプト -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>
