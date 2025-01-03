@@ -154,3 +154,75 @@ footer {
         display: none;
     }
 }
+
+/* style.cssに追加 */
+.benefits {
+    background-color: #E3F2FD;
+    padding: 60px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.download-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.app-store-button,
+.play-store-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.app-store-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.play-store-button {
+    background-color: #34A853;
+    color: white;
+}
+
+/* style.cssに追加 */
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
