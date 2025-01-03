@@ -813,42 +813,73 @@ footer {
     }
 }
 
-/* フッターのリンク用スタイルを修正 */
+/* フッターのスタイルを強制的に1行表示に修正 */
 .footer-links {
     display: flex;
-    gap: 24px;
-    /* リンク間の間隔 */
+    align-items: center;
     justify-content: center;
+    gap: 32px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     flex-wrap: nowrap;
-    /* 折り返しを防止 */
-    margin-bottom: 20px;
+    width: 100%;
 }
 
 .footer-links a {
+    display: block;
     color: var(--text-secondary);
     text-decoration: none;
+    padding: 8px 0;
+    font-size: 16px;
+    line-height: 1;
     white-space: nowrap;
-    /* テキストの折り返しを防止 */
-    transition: color 0.3s ease;
-    padding: 8px 16px;
-    /* タップ領域を確保 */
+    text-align: center;
 }
 
-.footer-links a:hover {
-    color: var(--primary-color);
+/* フッターコンテナ自体のスタイル */
+footer .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* コピーライトのスタイル */
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* モバイル対応 */
 @media (max-width: 480px) {
     .footer-links {
-        gap: 16px;
-        /* 小さい画面では間隔を縮める */
+        gap: 20px;
     }
 
     .footer-links a {
-        padding: 8px 12px;
-        /* パディングも調整 */
         font-size: 14px;
-        /* 必要に応じてフォントサイズを小さく */
     }
+}
+
+/* style.cssの.logoセクションを修正/追加 */
+.logo a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
 }
