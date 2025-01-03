@@ -11,14 +11,20 @@
     --text-secondary: #546E7A;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --gradient-primary: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    --header-height: 60px;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: var(--text-color);
+    color: var(--text-primary);
     background-color: var(--background-color);
 }
 
@@ -28,7 +34,23 @@ body {
     padding: 0 20px;
 }
 
-/* Header styles */
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
 header {
     background-color: var(--primary-color);
     color: white;
@@ -52,6 +74,12 @@ header {
     font-weight: bold;
 }
 
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -67,192 +95,21 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Main content */
 main {
     margin-top: var(--header-height);
-    padding: 40px 0;
 }
 
 /* Hero section */
-.hero {
-    text-align: center;
-    padding: 60px 0;
-    background-color: #f5f5f5;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 20px;
-    color: var(--secondary-color);
-    margin-bottom: 30px;
-}
-
-/* Features section */
-.features {
-    padding: 60px 0;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.feature-card {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Legal pages */
-.legal-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.legal-content h1 {
-    color: var(--primary-color);
-    margin-bottom: 30px;
-}
-
-.legal-content h2 {
-    color: var(--secondary-color);
-    margin-top: 40px;
-}
-
-/* Footer */
-footer {
-    background-color: #f5f5f5;
-    padding: 40px 0;
-    margin-top: 60px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 18px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    nav {
-        display: none;
-    }
-}
-
-/* style.cssに追加 */
-.benefits {
-    background-color: #E3F2FD;
-    padding: 60px 0;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.benefit-card {
-    background: white;
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.benefit-card:hover {
-    transform: translateY(-5px);
-}
-
-.download {
-    padding: 80px 0;
-}
-
-.download-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.store-link {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.store-link:hover {
-    transform: translateY(-2px);
-}
-
-.store-badge {
-    display: block;
-    height: auto;
-    max-width: 100%;
-}
-
-.app-store-button,
-.play-store-button {
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.app-store-button {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.play-store-button {
-    background-color: #34A853;
-    color: white;
-}
-
-/* style.cssに追加 */
-@media (max-width: 480px) {
-    .header-content {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-
-    .hero {
-        padding: 40px 0;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .download-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* style.cssに追加 */
-/* ヒーローセクションのスタイル */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -280,6 +137,11 @@ footer {
     padding: 80px 0;
 }
 
+.hero-text {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
 .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -303,13 +165,66 @@ footer {
     margin-bottom: 32px;
 }
 
-/* フィーチャーカードのスタイル */
+.hero-cta {
+    display: flex;
+    gap: 16px;
+}
+
+/* Features section */
+.features {
+    padding: 100px 0;
+    background-color: var(--surface-color);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards 0.2s;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    padding: 0 16px;
+}
+
 .feature-card {
     background: white;
     border-radius: 20px;
     padding: 32px;
     box-shadow: 0 10px 30px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.feature-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.5s;
 }
 
 .feature-card:hover {
@@ -334,7 +249,74 @@ footer {
     color: var(--primary-color);
 }
 
-/* ボタンスタイル */
+.feature-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.feature-detail {
+    border-top: 1px solid var(--primary-light);
+    padding-top: 16px;
+}
+
+.feature-detail ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-detail li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.feature-detail li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+/* Download section */
+.download {
+    padding: 80px 0;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.store-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.store-link:hover {
+    transform: translateY(-2px);
+}
+
+.store-badge {
+    display: block;
+    height: 48px;
+    width: auto;
+}
+
+/* Button styles */
 .cta-button {
     display: inline-block;
     padding: 16px 32px;
@@ -362,7 +344,6 @@ footer {
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
-    margin-left: 16px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -371,7 +352,64 @@ footer {
     color: white;
 }
 
-/* アニメーション */
+/* Footer */
+footer {
+    background-color: var(--surface-color);
+    padding: 60px 0 40px;
+    margin-top: 60px;
+}
+
+.footer-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.copyright {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes float {
     0% {
         transform: translateY(0px);
@@ -393,92 +431,12 @@ footer {
 
 .app-preview {
     width: 100%;
-    max-width: 400px;
+    max-width: 280px;
     border-radius: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* レスポンシブデザイン */
-@media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .hero-image {
-        order: 0;
-        /* デフォルトの順序に戻す */
-    }
-
-    .hero-text {
-        order: -1;
-        /* テキストを先に表示 */
-        text-align: center;
-    }
-
-    .gradient-text {
-        font-size: 48px;
-    }
-
-    .hero-cta {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        align-items: center;
-    }
-
-    .secondary-button {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .download {
-        padding: 40px 0;
-    }
-
-    .download-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .store-badge {
-        width: 140px;
-        /* モバイルでは少し小さく */
-    }
-}
-
-/* スキップリンクのスタイル */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--primary-color);
-    color: white;
-    padding: 8px;
-    z-index: 100;
-    transition: top 0.3s ease;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* フォーカス表示の改善 */
-a:focus,
-button:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-/* キーボードフォーカスのスタイル */
-a:focus-visible,
-button:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-/* モバイルメニューボタン */
+/* Mobile menu button */
 .menu-toggle {
     display: none;
     padding: 10px;
@@ -487,21 +445,109 @@ button:focus-visible {
     cursor: pointer;
 }
 
+.menu-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: white;
+    left: 0;
+}
+
+.menu-icon::before {
+    top: -6px;
+}
+
+.menu-icon::after {
+    bottom: -6px;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: 0;
+    }
+
+    .hero-text {
+        order: -1;
+    }
+
+    .gradient-text {
+        font-size: 48px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .menu-toggle {
         display: block;
     }
 
-    #main-menu {
+    nav ul {
         display: none;
     }
 
-    #main-menu.active {
-        display: block;
+    nav ul.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--primary-color);
+        padding: 20px;
+    }
+
+    nav ul.active li {
+        margin: 10px 0;
     }
 }
 
-/* ハイコントラストモード対応 */
+@media (max-width: 480px) {
+    .gradient-text {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .features {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* High contrast mode */
 @media (forced-colors: active) {
     .gradient-text {
         -webkit-background-clip: unset;
