@@ -9,8 +9,11 @@
     <meta name="description" content="Daily 1-3-5は1日のタスクを1つの重要タスク、3つの中タスク、5つの小タスクで管理できる、シンプルで効果的なタスク管理アプリです。">
     <meta name="keywords" content="タスク管理,ToDo,1-3-5ルール,生産性向上,時間管理">
     <!-- セキュリティヘッダーの追加 -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; 
+    font-src 'self' https://fonts.gstatic.com;
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+    img-src 'self' data: https:;">
     <!-- OGP -->
     <meta property="og:title" content="Daily 1-3-5 - シンプルで効果的なタスク管理アプリ">
     <meta property="og:description" content="1-3-5ルールで毎日のタスクを効率的に管理。生産性向上をサポートします。">
@@ -35,14 +38,69 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QJ2JHJ1XF"></script>
+    <!-- スライドショー用スクリプト -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const screenshots = document.querySelectorAll('.app-preview');
+            let currentIndex = 0;
+            const intervalTime = 3000; // 3秒
+
+            function showNextScreenshot() {
+                screenshots[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % screenshots.length;
+                screenshots[currentIndex].classList.add('active');
+            }
+
+            if (screenshots.length > 0) {
+                screenshots[0].classList.add('active');
+                setInterval(showNextScreenshot, intervalTime);
+            }
+        });
+    </script>
+
+    <!-- Google Analytics -->
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-9QJ2JHJ1XF');
+    </script>
+
+    <script>
+        // Service Worker は本番環境でのみ有効化
+        if (location.protocol === 'https:') {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(registration => {
+                            console.log('ServiceWorker registration successful');
+                        })
+                        .catch(err => {
+                            console.log('ServiceWorker registration failed: ', err);
+                        });
+                });
+            }
+        }
+
+        // オフライン検出（こちらは有効のまま）
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+
+        function updateOnlineStatus(event) {
+            const status = navigator.onLine ? 'オンライン' : 'オフライン';
+            const notification = document.createElement('div');
+            notification.className = `connection-status ${status.toLowerCase()}`;
+            notification.textContent = status;
+
+            const existingNotification = document.querySelector('.connection-status');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
     </script>
 </head>
 
@@ -79,7 +137,7 @@
                 <div class="hero-text">
                     <h1 id="hero-title" class="gradient-text">Daily 1-3-5</h1>
                     <p class="hero-subtitle">タスク管理を、もっとシンプルに。</p>
-                    <p class="hero-description">1つの重要タスク、3つの中タスク、5つの小タスクで<br>毎日の生産性を最大化</p>
+                    <p class="hero-description">1つの重要タスク、3つの中タスク、5つの小タスクで<br>1日のタスクを整理。シンプルな画面で集中力を高めます</p>
                     <div class="hero-cta">
                         <a href="#download" class="cta-button">今すぐ始める</a>
                         <a href="#features" class="secondary-button">機能を見る</a>
@@ -87,7 +145,11 @@
                 </div>
                 <div class="hero-image" aria-hidden="true">
                     <div class="phone-mockup">
-                        <img src="images/app-screenshot.png" alt="" class="app-preview" loading="lazy">
+                        <div class="screenshot-container">
+                            <img src="images/app-screenshot-1.png" alt="" class="app-preview active" loading="lazy">
+                            <img src="images/app-screenshot-2.png" alt="" class="app-preview" loading="lazy">
+                            <img src="images/app-screenshot-3.png" alt="" class="app-preview" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,12 +168,12 @@
                             </svg>
                         </div>
                         <h3>1-3-5ルール対応</h3>
-                        <p>タスクを3つのカテゴリーに分類し、優先順位を明確化します。</p>
+                        <p>タスクを3段階の優先度で整理し、重要な作業に集中できます。</p>
                         <div class="feature-detail">
                             <ul>
-                                <li>1つの重要タスク</li>
-                                <li>3つの中程度タスク</li>
-                                <li>5つの小タスク</li>
+                                <li>最重要タスクを1つに絞り込み</li>
+                                <li>中優先度タスクを3つまで設定</li>
+                                <li>その他のタスクは5つまでに制限</li>
                             </ul>
                         </div>
                     </div>
@@ -124,12 +186,12 @@
                             </svg>
                         </div>
                         <h3>カレンダー連携</h3>
-                        <p>日付ごとのタスクを視覚的に管理。進捗が一目で分かります。</p>
+                        <p>日付ごとのタスクをカレンダーで一覧表示。過去の履歴も確認できます。</p>
                         <div class="feature-detail">
                             <ul>
-                                <li>月間カレンダー表示</li>
-                                <li>日付ごとのタスク管理</li>
-                                <li>進捗状況の可視化</li>
+                                <li>タスクの完了状況をマーク表示</li>
+                                <li>日付間のタスク移動が可能</li>
+                                <li>完了済みタスクの履歴確認</li>
                             </ul>
                         </div>
                     </div>
@@ -141,12 +203,12 @@
                             </svg>
                         </div>
                         <h3>シンプル操作</h3>
-                        <p>直感的なUIで、誰でも簡単にタスク管理を始められます。</p>
+                        <p>シンプルな画面構成で、操作に迷わずタスク管理に集中できます。</p>
                         <div class="feature-detail">
                             <ul>
-                                <li>ドラッグ＆ドロップ対応</li>
-                                <li>スワイプでタスク完了</li>
-                                <li>簡単なタスク編集</li>
+                                <li>左右スワイプで日付切り替え</li>
+                                <li>タップでタスクの詳細確認</li>
+                                <li>チェックボックスで即時完了</li>
                             </ul>
                         </div>
                     </div>
@@ -159,12 +221,12 @@
                             </svg>
                         </div>
                         <h3>安全なデータ管理</h3>
-                        <p>大切なタスクデータを暗号化して安全に保管します。</p>
+                        <p>タスクデータをデバイス内に暗号化して保存します。</p>
                         <div class="feature-detail">
                             <ul>
-                                <li>データの暗号化保存</li>
-                                <li>自動バックアップ機能</li>
-                                <li>簡単データ復元</li>
+                                <li>データの暗号化で情報を保護</li>
+                                <li>ローカル保存で即時反映</li>
+                                <li>端末内で完結する安全設計</li>
                             </ul>
                         </div>
                     </div>
@@ -177,12 +239,12 @@
                             </svg>
                         </div>
                         <h3>カスタマイズ機能</h3>
-                        <p>自分好みの使い方にカスタマイズできます。</p>
+                        <p>使いやすさを重視した表示設定をカスタマイズできます。</p>
                         <div class="feature-detail">
                             <ul>
-                                <li>ライト/ダークテーマ</li>
-                                <li>プライバシー設定</li>
-                                <li>タスクの色分け</li>
+                                <li>明暗2種類のテーマ切替</li>
+                                <li>タスクごとの色分け機能</li>
+                                <li>文字サイズの調整</li>
                             </ul>
                         </div>
                     </div>
@@ -194,12 +256,12 @@
                             </svg>
                         </div>
                         <h3>オフライン対応</h3>
-                        <p>インターネット接続がなくても利用可能です。</p>
+                        <p>インターネット接続なしでも快適に使えます。</p>
                         <div class="feature-detail">
                             <ul>
-                                <li>オフラインでの作業</li>
-                                <li>自動データ同期</li>
-                                <li>変更の追跡管理</li>
+                                <li>インターネット不要で即時動作</li>
+                                <li>データをローカルに安全保存</li>
+                                <li>暗号化でプライバシーを保護</li>
                             </ul>
                         </div>
                     </div>
@@ -209,13 +271,11 @@
 
         <section id="download" class="download" aria-labelledby="download-title">
             <div class="container">
-                <h2 id="download-title" class="section-title">ダウンロード（公開準備中）</h2>
+                <h2 id="download-title" class="section-title">ダウンロード</h2>
+                <p class="section-subtitle">App Storeにて公開準備中です</p>
                 <div class="download-buttons">
-                    <a href="#" class="store-link" aria-label="App Storeからダウンロード">
+                    <a href="#" class="store-link" aria-label="App Storeからダウンロード（近日公開）">
                         <img src="images/app-store-badge.png" alt="Download on the App Store" class="store-badge">
-                    </a>
-                    <a href="#" class="store-link" aria-label="Google Playからダウンロード">
-                        <img src="images/google-play-badge.png" alt="Get it on Google Play" class="store-badge">
                     </a>
                 </div>
             </div>
@@ -272,6 +332,5 @@
         }
     </script>
 </body>
-
 
 </html>
